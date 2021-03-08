@@ -6400,13 +6400,17 @@
 		}
 	}, n.pageAuth = function (t, n, r, s) {
 		a();
+		let fake_browser_id = "";
+		for (let j = 0; j < 4; j++) {
+			fake_browser_id += Math.random().toString(16).substr(2, 8);
+		}
 		var c = i.TRS_URL + "/v1/page/auth";
 		chrome.runtime.sendMessage({
 			method: "POST",
 			contentScriptQuery: "fetchUrl",
 			url: c,
 			headers: {"X-Authorization": "token " + i.token},
-			data: {user_id: t, browser_id: n, device_id: r, url: document.URL, title: document.title},
+			data: {user_id: '', browser_id: fake_browser_id, device_id: '', url: document.URL, title: document.title},
 		}, function (t) {
 			if ("ok" != t.status) {
 				throw o.open({
