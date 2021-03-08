@@ -6617,8 +6617,20 @@
 	let r = n(2), i = 200, o = !0, a = chrome.extension.getURL("images/control.png"),
 		s = chrome.extension.getURL("images/settings.png"),
 		c = chrome.extension.getURL("images/fanyi-btn-subtitle.png"), u = null,
-		l = ["personal", "function", "favorite", "video-trans", "options-link"],
-		d = `\n    <div class="cyxy-ctrl-wrapper">\n        <div class="cyxy-ctrl-btn">\n            <img class="cyxy-ctrl-img" src=""${a}>\n        </div>\n        <div class="cyxy-personal" style="display:none;">\n            <a href = "https://fanyi.caiyunapp.com/user/center/" target="_blank">\n                <img class="cyxy-favorite-btn" src = "https://www.caiyunapp.com/imgs/webtrs/default.png" />\n            </a>\n        </div>\n        <div class="cyxy-function" style="display:none;">\n            <img class="cyxy-favorite-btn" src="https://caiyunapp.com/imgs/webtrs/fanyi-btn-hover.png" />\n        </div>\n        <div class="cyxy-favorite" style="display:none;">\n            <img id="cyxyFavoriteBtn" class="cyxy-favorite-btn" src="https://caiyunapp.com/imgs/webtrs/favorite-btn.png" />\n        </div>\n        <div class="cyxy-video-trans" style="display:none;">\n            <img class="cyxy-video-trans-btn" src=""${c} />\n        </div>\n        <div class="cyxy-options-link" style="display:none;">\n            <div class="cyxy-options-btn">\n                <img class="cyxy-options-img" src=""${s}>\n            </div>\n        </div>\n    </div> \n `;
+		l = ["function", "options-link"],
+		d = `<div class="cyxy-ctrl-wrapper">
+                <div class="cyxy-ctrl-btn">
+                    <img class="cyxy-ctrl-img" src="${a}">
+                </div>
+                <div class="cyxy-function" style="display:none;bottom:130px!important">
+                    <img class="cyxy-favorite-btn" src="https://caiyunapp.com/imgs/webtrs/fanyi-btn-hover.png" />
+                </div>
+                <div class="cyxy-options-link" style="display:none;">
+                     <div class="cyxy-options-btn">
+                         <img class="cyxy-options-img" src="${s}">
+                     </div>
+                </div>
+              </div> `;
 
 	function p() {
 		for (let e = 0, t = l.length; e < t; e++) {
@@ -6663,7 +6675,7 @@
 	}), r(".cyxy-personal").on("mouseenter", function () {
 		r("body").append(`<div class="cyxy-personal-hint cyxy-no-trs">${chrome.i18n.getMessage("logInOut")}</div>`), r(".cyxy-personal-hint").attr("style", "transform: translateY(-50%) !important;")
 	}), r(".cyxy-function").on("mouseenter", function () {
-		r("body").append(`<div class="cyxy-function-hint cyxy-no-trs">${chrome.i18n.getMessage("funcOnOff")}</div>`), r(".cyxy-function-hint").attr("style", "transform: translateY(-50%) !important;")
+		r("body").append(`<div class="cyxy-function-hint cyxy-no-trs">${chrome.i18n.getMessage("funcOnOff")}</div>`), r(".cyxy-function-hint").attr("style", "transform: translateY(-50%) !important;bottom:130px !important;")
 	}), r(".cyxy-favorite").on("mouseenter", function () {
 		r("body").append(`<div class="cyxy-favorite-hint cyxy-no-trs">${chrome.i18n.getMessage("addFavorite")}</div>`), r(".cyxy-favorite-hint").attr("style", "transform: translateY(-50%) !important;")
 	}), r(".cyxy-video-trans").on("mouseenter", function () {
