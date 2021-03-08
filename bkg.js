@@ -1866,7 +1866,7 @@
 	var H, J, G, Y, V;
 	H = window, J = document, G = "script", H.GoogleAnalyticsObject = "ga", H.ga = H.ga || function () {
 		(H.ga.q = H.ga.q || []).push(arguments);
-	}, H.ga.l = 1 * new Date, Y = J.createElement(G), V = J.getElementsByTagName(G)[0], Y.async = 1, Y.src = "https://www.google-analytics.com/analytics.js", V.parentNode.insertBefore(Y, V), window.ga_debug = {trace: !0}, ga("create", "UA-83184075-2", {cookieDomain: "none"}), ga("set", "checkProtocolTask", function () {
+	}, H.ga.l = 1 * new Date, Y = J.createElement(G), V = J.getElementsByTagName(G)[0], Y.async = 1, Y.src = "", V.parentNode.insertBefore(Y, V), window.ga_debug = {trace: !0}, ga("create", "UA-83184075-2", {cookieDomain: "none"}), ga("set", "checkProtocolTask", function () {
 	});
 }, function (e, t, n) {
 	"use strict";
