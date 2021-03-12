@@ -4981,12 +4981,16 @@
 		function V() {
 			ae();
 			var t = s.TRS_URL + "/v1/page/auth";
+			let fake_browser_id = "";
+			for (let j = 0; j < 4; j++) {
+				fake_browser_id += Math.random().toString(16).substr(2, 8);
+			}
 			chrome.runtime.sendMessage({
 				method: "POST",
 				contentScriptQuery: "fetchUrl",
 				url: t,
 				headers: {"X-Authorization": "token " + s.token},
-				data: {user_id: P, browser_id: O, device_id: N, url: document.URL, title: document.title},
+				data: {user_id: P, browser_id: fake_browser_id, device_id: N, url: document.URL, title: document.title},
 			}, function (t) {
 				if ("ok" != t.status) {
 					throw o.open({content: A, skin: "msg", time: 5}), new Error("PageAuth Error", e);
@@ -5234,12 +5238,16 @@
 					skin: "cy_free_content",
 				}), u("#cy_free_content,#cy_free_button").click(function () {
 					var e;
+					let fake_browser_id = "";
+					for (let j = 0; j < 4; j++) {
+						fake_browser_id += Math.random().toString(16).substr(2, 8);
+					}
 					e = s.TRS_URL + "/v1/coupon/generate", chrome.runtime.sendMessage({
 						method: "POST",
 						contentScriptQuery: "fetchUrl",
 						url: e,
 						headers: {"X-Authorization": "token " + s.token},
-						data: {browser_id: O},
+						data: {browser_id: fake_browser_id},
 					}, function (e) {
 						var t = JSON.parse(e.data), n = {};
 						0 == t.rc && t.coupon && (localStorage.setItem("cy_coupon_code", JSON.stringify({
